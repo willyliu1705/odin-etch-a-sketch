@@ -21,6 +21,7 @@ function generateDivs(dimensions) {
       columns.classList.add("columns");
       columns.style.width = `${square_width}px`;
       columns.style.height = `${square_height}px`;
+      columns.style.opacity = "0.1";
       rowDiv.appendChild(columns);
     }
   })
@@ -30,10 +31,11 @@ function generateDivs(dimensions) {
     columnDiv.addEventListener("mouseover", () => {
       let rgbValues = getRandomRGB();
       columnDiv.style.backgroundColor = `rgb(${rgbValues})`;
+      columnDiv.style.opacity = Number(columnDiv.style.opacity) + 0.1;
     })
 
     columnDiv.addEventListener("mouseout", () => {
-      columnDiv.style.backgroundColor = "";
+      columnDiv.style.backgroundColor = "lightblue";
     })
   })
 }
