@@ -19,23 +19,30 @@ function generateDivs(dimensions) {
     for (let i = 1; i <= dimensions; i++) {
       let columns = document.createElement("div");
       columns.classList.add("columns");
-      columns.style.width = `${square_width}px`
-      columns.style.height = `${square_height}px`
+      columns.style.width = `${square_width}px`;
+      columns.style.height = `${square_height}px`;
       rowDiv.appendChild(columns);
     }
   })
 
   let columnDivs = document.querySelectorAll(".columns");
   columnDivs.forEach((columnDiv) => {
-    let listOfClasses = columnDiv.classList;
     columnDiv.addEventListener("mouseover", () => {
-      listOfClasses.toggle("hover");
+      let rgbValues = getRandomRGB();
+      columnDiv.style.backgroundColor = `rgb(${rgbValues})`;
     })
 
     columnDiv.addEventListener("mouseout", () => {
-      listOfClasses.toggle("hover");
+      columnDiv.style.backgroundColor = "";
     })
   })
+}
+
+function getRandomRGB() {
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
+  return `${red} ${green} ${blue}`;
 }
 
 function clearDivs() {
