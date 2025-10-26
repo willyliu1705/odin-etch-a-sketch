@@ -15,6 +15,16 @@ rowDivs.forEach((rowDiv) => {
   }
 })
 
+let columnDivs = document.querySelectorAll(".columns");
+columnDivs.forEach((columnDiv) => {
+  let listOfClasses = columnDiv.classList;
+  columnDiv.addEventListener("mouseover", () => {
+    listOfClasses.toggle("hover")
+  })
 
+  columnDiv.addEventListener("mouseout", () => {
+    listOfClasses.toggle("hover")
+  })
+})
 
 
