@@ -1,17 +1,24 @@
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  height: 1200px;
+}
+
 .rows {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  gap: 20px;
 }
 
 .columns {
-  width: 200px;
-  height: 200px;
   border: 2px solid black;
 }
 
 .hover {
   background-color: lightblue;
+}
+
+#dimensions-button {
+  text-align: center;
+  margin-bottom: 10px;
 }
